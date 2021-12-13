@@ -65,6 +65,7 @@
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.AdminPage = new System.Windows.Forms.TabPage();
+            this.LabelErrorAdmin = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.clearBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -72,7 +73,6 @@
             this.AdminLoginButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.TextBoxadminUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.LabelErrorAdmin = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -283,7 +283,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Vender.Properties.Resources.loginBack;
             this.pictureBox1.Location = new System.Drawing.Point(27, 45);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(313, 285);
@@ -315,10 +315,10 @@
             this.bunifuPages1.Location = new System.Drawing.Point(368, 0);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.AdminPage;
-            this.bunifuPages1.PageIndex = 1;
-            this.bunifuPages1.PageName = "AdminPage";
-            this.bunifuPages1.PageTitle = "Admin";
+            this.bunifuPages1.Page = this.SellersPage;
+            this.bunifuPages1.PageIndex = 0;
+            this.bunifuPages1.PageName = "SellersPage";
+            this.bunifuPages1.PageTitle = "Sellers";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(409, 422);
             this.bunifuPages1.TabIndex = 1;
@@ -489,7 +489,7 @@
             this.bunifuTextBox2.DefaultText = "";
             this.bunifuTextBox2.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox2.HideSelection = true;
-            this.bunifuTextBox2.IconLeft = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox2.IconLeft")));
+            this.bunifuTextBox2.IconLeft = global::Vender.Properties.Resources.password_144px;
             this.bunifuTextBox2.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox2.IconPadding = 10;
             this.bunifuTextBox2.IconRight = null;
@@ -562,7 +562,7 @@
             this.bunifuTextBox1.DefaultText = "";
             this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox1.HideSelection = true;
-            this.bunifuTextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.IconLeft")));
+            this.bunifuTextBox1.IconLeft = global::Vender.Properties.Resources.user_512px;
             this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.IconPadding = 10;
             this.bunifuTextBox1.IconRight = null;
@@ -644,6 +644,16 @@
             this.AdminPage.TabIndex = 1;
             this.AdminPage.Text = "Admin";
             // 
+            // LabelErrorAdmin
+            // 
+            this.LabelErrorAdmin.AutoSize = true;
+            this.LabelErrorAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelErrorAdmin.ForeColor = System.Drawing.Color.Red;
+            this.LabelErrorAdmin.Location = new System.Drawing.Point(42, 351);
+            this.LabelErrorAdmin.Name = "LabelErrorAdmin";
+            this.LabelErrorAdmin.Size = new System.Drawing.Size(0, 21);
+            this.LabelErrorAdmin.TabIndex = 14;
+            // 
             // clearBtn
             // 
             this.clearBtn.ActiveBorderThickness = 1;
@@ -720,7 +730,7 @@
             this.TextBoxadminUPassword.DefaultText = "";
             this.TextBoxadminUPassword.FillColor = System.Drawing.Color.White;
             this.TextBoxadminUPassword.HideSelection = true;
-            this.TextBoxadminUPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("TextBoxadminUPassword.IconLeft")));
+            this.TextBoxadminUPassword.IconLeft = global::Vender.Properties.Resources.password_144px;
             this.TextBoxadminUPassword.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxadminUPassword.IconPadding = 10;
             this.TextBoxadminUPassword.IconRight = null;
@@ -864,7 +874,7 @@
             this.TextBoxadminUsername.DefaultText = "";
             this.TextBoxadminUsername.FillColor = System.Drawing.Color.White;
             this.TextBoxadminUsername.HideSelection = true;
-            this.TextBoxadminUsername.IconLeft = ((System.Drawing.Image)(resources.GetObject("TextBoxadminUsername.IconLeft")));
+            this.TextBoxadminUsername.IconLeft = global::Vender.Properties.Resources.user_512px;
             this.TextBoxadminUsername.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxadminUsername.IconPadding = 10;
             this.TextBoxadminUsername.IconRight = null;
@@ -928,16 +938,6 @@
             this.bunifuSeparator2.TabIndex = 9;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
-            // 
-            // LabelErrorAdmin
-            // 
-            this.LabelErrorAdmin.AutoSize = true;
-            this.LabelErrorAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelErrorAdmin.ForeColor = System.Drawing.Color.Red;
-            this.LabelErrorAdmin.Location = new System.Drawing.Point(42, 351);
-            this.LabelErrorAdmin.Name = "LabelErrorAdmin";
-            this.LabelErrorAdmin.Size = new System.Drawing.Size(0, 21);
-            this.LabelErrorAdmin.TabIndex = 14;
             // 
             // Login
             // 

@@ -139,6 +139,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DatabaseDataSet.xsc">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
@@ -184,6 +185,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\chart2.png" />
+    <None Include="Resources\chart1.png" />
+    <None Include="Resources\food2.png" />
+    <None Include="Resources\food1.png" />
+    <None Include="Resources\percentage2.png" />
+    <None Include="Resources\percentage1.png" />
+    <None Include="Resources\about2.png" />
+    <None Include="Resources\about1.png" />
+    <None Include="Resources\selling2.png" />
+    <None Include="Resources\selling1.png" />
+    <None Include="Resources\sellers2.png" />
+    <None Include="Resources\sellers1.png" />
+    <None Include="Resources\categories2.png" />
+    <None Include="Resources\categories1.png" />
+    <None Include="Resources\Logout2.png" />
+    <None Include="Resources\Logout1.png" />
+    <None Include="Resources\monitor2.png" />
+    <None Include="Resources\monitor1.png" />
+    <None Include="Resources\name.png" />
+    <None Include="Resources\user_512px.png" />
+    <None Include="Resources\password_144px.png" />
+    <None Include="Resources\cancel_500px.png" />
+    <None Include="Resources\email_open_144px.png" />
+    <None Include="Resources\loginBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

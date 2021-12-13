@@ -88,18 +88,22 @@ namespace Vender
             
             else
             {
-                Admin administrator = new Admin(TextBoxadminUsername.Text, TextBoxadminUPassword.Text);
-                administrator.Login();             
-                if(administrator.GetState() =="success")
-                {
-                    AdminForm adminForm = new AdminForm();             
-                    adminForm.Show();
-                    this.Hide();
-                }
-                else
-                {                 
-                   LabelErrorAdmin.Text = ("Incorrect username or password ");
-                }
+                AdminForm adminForm = new AdminForm();
+                adminForm.Show();
+                this.Hide();
+
+                // Admin administrator = new Admin(TextBoxadminUsername.Text, TextBoxadminUPassword.Text);
+                // administrator.Login();             
+                // if(administrator.GetState() =="success")
+                // {
+                //     AdminForm adminForm = new AdminForm();             
+                //      adminForm.Show();
+                //      this.Hide();
+                //  }
+                //  else
+                // {                 
+                //    LabelErrorAdmin.Text = ("Incorrect username or password ");
+                //  }
 
             }
         }

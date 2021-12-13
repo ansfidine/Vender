@@ -86,22 +86,21 @@ namespace Vender
                 LabelErrorAdmin.Text = ("Enter password");
             }
             
-                else
+            else
             {
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM admin WHERE username='" + TextBoxadminUsername.Text + "' AND password='" + TextBoxadminUPassword.Text + "'", dBCon.GetCon());
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-
-                if (dt.Rows[0][0].ToString() == "1")
+                Admin administrator = new Admin(TextBoxadminUsername.Text, TextBoxadminUPassword.Text);
+                administrator.Login();             
+                if(administrator.GetState() =="success")
                 {
-                    AdminForm form = new AdminForm();
-                    form.Show();
+                    AdminForm adminForm = new AdminForm();             
+                    adminForm.Show();
                     this.Hide();
                 }
                 else
-                {
-                    LabelErrorAdmin.Text = ("Incorrect username or password ");
+                {                 
+                   LabelErrorAdmin.Text = ("Incorrect username or password ");
                 }
+
             }
         }
 

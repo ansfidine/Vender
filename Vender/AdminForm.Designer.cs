@@ -1150,6 +1150,7 @@
             this.refreshButtonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.refreshButtonProduct.TextMarginLeft = 0;
             this.refreshButtonProduct.UseDefaultRadiusAndThickness = true;
+            this.refreshButtonProduct.Click += new System.EventHandler(this.refreshButtonProduct_Click);
             // 
             // deleteButtonProduct
             // 
@@ -1321,6 +1322,7 @@
             this.ProductCategoryDropdownSearch.Size = new System.Drawing.Size(183, 32);
             this.ProductCategoryDropdownSearch.TabIndex = 21;
             this.ProductCategoryDropdownSearch.Text = null;
+            this.ProductCategoryDropdownSearch.SelectionChangeCommitted += new System.EventHandler(this.ProductCategoryDropdownSearch_SelectionChangeCommitted);
             // 
             // DataGridViewProducts
             // 

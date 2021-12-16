@@ -408,5 +408,20 @@ namespace Vender
         {
             DeleteProduct();
         }
+
+        private void refreshButtonProduct_Click(object sender, EventArgs e)
+        {
+            getTable(DataGridViewProducts, "Product");
+        }
+
+        private void ProductCategoryDropdownSearch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM Product WHERE Category ='"+ProductCategoryDropdownSearch.SelectedValue.ToString()+"'";
+            SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            DataGridViewProducts.DataSource = table;
+        }
     }
 }

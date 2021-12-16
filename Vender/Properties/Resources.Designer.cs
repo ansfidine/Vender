@@ -163,6 +163,16 @@ namespace Vender.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grocery_products_icon_png_3 {
+            get {
+                object obj = ResourceManager.GetObject("grocery-products-icon-png-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginBack {
             get {
                 object obj = ResourceManager.GetObject("loginBack", resourceCulture);
@@ -186,6 +196,16 @@ namespace Vender.Properties {
         internal static System.Drawing.Bitmap Logout2 {
             get {
                 object obj = ResourceManager.GetObject("Logout2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimiz {
+            get {
+                object obj = ResourceManager.GetObject("minimiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +306,26 @@ namespace Vender.Properties {
         internal static System.Drawing.Bitmap selling2 {
             get {
                 object obj = ResourceManager.GetObject("selling2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tag_window {
+            get {
+                object obj = ResourceManager.GetObject("tag_window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tag_window2 {
+            get {
+                object obj = ResourceManager.GetObject("tag_window2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

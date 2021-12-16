@@ -9,7 +9,7 @@ namespace Vender
 {
      class DBConnect
     {
-        private SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+        private SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ansfidine Youssouf\source\repos\Vender\Vender\DB.mdf;Integrated Security=True");
         public SqlConnection GetCon()
         {
             return connection;

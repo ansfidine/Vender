@@ -55,6 +55,12 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
       <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
     </Reference>
@@ -76,8 +82,14 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
+    <Reference Include="BunifuDataViz">
+      <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu Dataviz Advanced 1.1.1.5\BunifuDataViz.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Desktop\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21 + Dataviz Advanced v1.1.1.5 + Activator\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\Desktop\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -178,13 +190,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database.mdf">
+    <Content Include="DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database_log.ldf">
+    <Content Include="DB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database.mdf</DependentUpon>
+      <DependentUpon>DB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\grocery-products-icon-png-3.png" />
+    <None Include="Resources\minimiz.png" />
+    <None Include="Resources\tag_window2.png" />
+    <None Include="Resources\tag_window.png" />
     <None Include="Resources\chart2.png" />
     <None Include="Resources\chart1.png" />
     <None Include="Resources\food2.png" />

@@ -104,13 +104,14 @@
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShadowPanel2 = new Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel();
+            this.LabelMessageProduct = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.updateButtonProduct = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.refreshButtonProduct = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.deleteButtonProduct = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.addButtonProduct = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.CategoryDropdown2 = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.ProductCategoryDropdownSearch = new Bunifu.UI.WinForms.BunifuDropdown();
             this.DataGridViewProducts = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.CategoryDropdown = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.ProductCategoryDropdown = new Bunifu.UI.WinForms.BunifuDropdown();
             this.TextBoxQuantityProduct = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.TextBoxPriceProduct = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.TextBoxNameProduct = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -316,7 +317,6 @@
             this.SellButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SellButton.TextMarginLeft = 0;
             this.SellButton.UseDefaultRadiusAndThickness = true;
-            this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
             // indicator
             // 
@@ -842,10 +842,10 @@
             this.bunifuAdminPages.Location = new System.Drawing.Point(219, 0);
             this.bunifuAdminPages.Multiline = true;
             this.bunifuAdminPages.Name = "bunifuAdminPages";
-            this.bunifuAdminPages.Page = this.DashboardPage;
-            this.bunifuAdminPages.PageIndex = 0;
-            this.bunifuAdminPages.PageName = "DashboardPage";
-            this.bunifuAdminPages.PageTitle = "Dashboard";
+            this.bunifuAdminPages.Page = this.ProductsPage;
+            this.bunifuAdminPages.PageIndex = 1;
+            this.bunifuAdminPages.PageName = "ProductsPage";
+            this.bunifuAdminPages.PageTitle = "Products";
             this.bunifuAdminPages.SelectedIndex = 0;
             this.bunifuAdminPages.Size = new System.Drawing.Size(946, 681);
             this.bunifuAdminPages.TabIndex = 1;
@@ -980,13 +980,14 @@
             // 
             this.bunifuShadowPanel2.BackColor = System.Drawing.Color.White;
             this.bunifuShadowPanel2.BorderColor = System.Drawing.Color.White;
+            this.bunifuShadowPanel2.Controls.Add(this.LabelMessageProduct);
             this.bunifuShadowPanel2.Controls.Add(this.updateButtonProduct);
             this.bunifuShadowPanel2.Controls.Add(this.refreshButtonProduct);
             this.bunifuShadowPanel2.Controls.Add(this.deleteButtonProduct);
             this.bunifuShadowPanel2.Controls.Add(this.addButtonProduct);
-            this.bunifuShadowPanel2.Controls.Add(this.CategoryDropdown2);
+            this.bunifuShadowPanel2.Controls.Add(this.ProductCategoryDropdownSearch);
             this.bunifuShadowPanel2.Controls.Add(this.DataGridViewProducts);
-            this.bunifuShadowPanel2.Controls.Add(this.CategoryDropdown);
+            this.bunifuShadowPanel2.Controls.Add(this.ProductCategoryDropdown);
             this.bunifuShadowPanel2.Controls.Add(this.TextBoxQuantityProduct);
             this.bunifuShadowPanel2.Controls.Add(this.TextBoxPriceProduct);
             this.bunifuShadowPanel2.Controls.Add(this.TextBoxNameProduct);
@@ -1000,6 +1001,16 @@
             this.bunifuShadowPanel2.ShadowTopLeftVisible = false;
             this.bunifuShadowPanel2.Size = new System.Drawing.Size(920, 621);
             this.bunifuShadowPanel2.TabIndex = 17;
+            // 
+            // LabelMessageProduct
+            // 
+            this.LabelMessageProduct.AutoSize = true;
+            this.LabelMessageProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMessageProduct.ForeColor = System.Drawing.Color.Red;
+            this.LabelMessageProduct.Location = new System.Drawing.Point(3, 482);
+            this.LabelMessageProduct.Name = "LabelMessageProduct";
+            this.LabelMessageProduct.Size = new System.Drawing.Size(0, 21);
+            this.LabelMessageProduct.TabIndex = 27;
             // 
             // updateButtonProduct
             // 
@@ -1069,6 +1080,7 @@
             this.updateButtonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.updateButtonProduct.TextMarginLeft = 0;
             this.updateButtonProduct.UseDefaultRadiusAndThickness = true;
+            this.updateButtonProduct.Click += new System.EventHandler(this.updateButtonProduct_Click);
             // 
             // refreshButtonProduct
             // 
@@ -1207,6 +1219,7 @@
             this.deleteButtonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.deleteButtonProduct.TextMarginLeft = 0;
             this.deleteButtonProduct.UseDefaultRadiusAndThickness = true;
+            this.deleteButtonProduct.Click += new System.EventHandler(this.deleteButtonProduct_Click);
             // 
             // addButtonProduct
             // 
@@ -1276,36 +1289,38 @@
             this.addButtonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.addButtonProduct.TextMarginLeft = 0;
             this.addButtonProduct.UseDefaultRadiusAndThickness = true;
+            this.addButtonProduct.Click += new System.EventHandler(this.addButtonProduct_Click);
             // 
-            // CategoryDropdown2
+            // ProductCategoryDropdownSearch
             // 
-            this.CategoryDropdown2.BackColor = System.Drawing.Color.White;
-            this.CategoryDropdown2.BorderRadius = 1;
-            this.CategoryDropdown2.Color = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown2.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.CategoryDropdown2.DisabledColor = System.Drawing.Color.Gray;
-            this.CategoryDropdown2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CategoryDropdown2.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thick;
-            this.CategoryDropdown2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CategoryDropdown2.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.CategoryDropdown2.FillDropDown = false;
-            this.CategoryDropdown2.FillIndicator = false;
-            this.CategoryDropdown2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CategoryDropdown2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown2.FormattingEnabled = true;
-            this.CategoryDropdown2.Icon = null;
-            this.CategoryDropdown2.IndicatorColor = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown2.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.CategoryDropdown2.ItemBackColor = System.Drawing.Color.White;
-            this.CategoryDropdown2.ItemBorderColor = System.Drawing.Color.White;
-            this.CategoryDropdown2.ItemForeColor = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown2.ItemHeight = 26;
-            this.CategoryDropdown2.ItemHighLightColor = System.Drawing.Color.Thistle;
-            this.CategoryDropdown2.Location = new System.Drawing.Point(605, 8);
-            this.CategoryDropdown2.Name = "CategoryDropdown2";
-            this.CategoryDropdown2.Size = new System.Drawing.Size(217, 32);
-            this.CategoryDropdown2.TabIndex = 21;
-            this.CategoryDropdown2.Text = null;
+            this.ProductCategoryDropdownSearch.BackColor = System.Drawing.Color.White;
+            this.ProductCategoryDropdownSearch.BorderRadius = 1;
+            this.ProductCategoryDropdownSearch.Color = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdownSearch.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.ProductCategoryDropdownSearch.DisabledColor = System.Drawing.Color.Gray;
+            this.ProductCategoryDropdownSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ProductCategoryDropdownSearch.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thick;
+            this.ProductCategoryDropdownSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductCategoryDropdownSearch.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ProductCategoryDropdownSearch.FillDropDown = false;
+            this.ProductCategoryDropdownSearch.FillIndicator = false;
+            this.ProductCategoryDropdownSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductCategoryDropdownSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductCategoryDropdownSearch.ForeColor = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdownSearch.FormattingEnabled = true;
+            this.ProductCategoryDropdownSearch.Icon = null;
+            this.ProductCategoryDropdownSearch.IndicatorColor = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdownSearch.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ProductCategoryDropdownSearch.ItemBackColor = System.Drawing.Color.White;
+            this.ProductCategoryDropdownSearch.ItemBorderColor = System.Drawing.Color.White;
+            this.ProductCategoryDropdownSearch.ItemForeColor = System.Drawing.Color.Black;
+            this.ProductCategoryDropdownSearch.ItemHeight = 26;
+            this.ProductCategoryDropdownSearch.ItemHighLightColor = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdownSearch.Location = new System.Drawing.Point(639, 8);
+            this.ProductCategoryDropdownSearch.Name = "ProductCategoryDropdownSearch";
+            this.ProductCategoryDropdownSearch.Size = new System.Drawing.Size(183, 32);
+            this.ProductCategoryDropdownSearch.TabIndex = 21;
+            this.ProductCategoryDropdownSearch.Text = null;
             // 
             // DataGridViewProducts
             // 
@@ -1366,37 +1381,38 @@
             this.DataGridViewProducts.Size = new System.Drawing.Size(620, 564);
             this.DataGridViewProducts.TabIndex = 20;
             this.DataGridViewProducts.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.ForestGreen;
+            this.DataGridViewProducts.Click += new System.EventHandler(this.DataGridViewProducts_Click);
             // 
-            // CategoryDropdown
+            // ProductCategoryDropdown
             // 
-            this.CategoryDropdown.BackColor = System.Drawing.Color.White;
-            this.CategoryDropdown.BorderRadius = 1;
-            this.CategoryDropdown.Color = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.CategoryDropdown.DisabledColor = System.Drawing.Color.Gray;
-            this.CategoryDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CategoryDropdown.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thick;
-            this.CategoryDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CategoryDropdown.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.CategoryDropdown.FillDropDown = false;
-            this.CategoryDropdown.FillIndicator = false;
-            this.CategoryDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CategoryDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryDropdown.ForeColor = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown.FormattingEnabled = true;
-            this.CategoryDropdown.Icon = null;
-            this.CategoryDropdown.IndicatorColor = System.Drawing.Color.ForestGreen;
-            this.CategoryDropdown.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.CategoryDropdown.ItemBackColor = System.Drawing.Color.White;
-            this.CategoryDropdown.ItemBorderColor = System.Drawing.Color.White;
-            this.CategoryDropdown.ItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(116)))), ((int)(((byte)(62)))));
-            this.CategoryDropdown.ItemHeight = 26;
-            this.CategoryDropdown.ItemHighLightColor = System.Drawing.Color.Thistle;
-            this.CategoryDropdown.Location = new System.Drawing.Point(3, 335);
-            this.CategoryDropdown.Name = "CategoryDropdown";
-            this.CategoryDropdown.Size = new System.Drawing.Size(267, 32);
-            this.CategoryDropdown.TabIndex = 19;
-            this.CategoryDropdown.Text = "Category";
+            this.ProductCategoryDropdown.BackColor = System.Drawing.Color.White;
+            this.ProductCategoryDropdown.BorderRadius = 1;
+            this.ProductCategoryDropdown.Color = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdown.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.ProductCategoryDropdown.DisabledColor = System.Drawing.Color.Gray;
+            this.ProductCategoryDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ProductCategoryDropdown.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thick;
+            this.ProductCategoryDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductCategoryDropdown.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.ProductCategoryDropdown.FillDropDown = false;
+            this.ProductCategoryDropdown.FillIndicator = false;
+            this.ProductCategoryDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductCategoryDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductCategoryDropdown.ForeColor = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdown.FormattingEnabled = true;
+            this.ProductCategoryDropdown.Icon = null;
+            this.ProductCategoryDropdown.IndicatorColor = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdown.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.ProductCategoryDropdown.ItemBackColor = System.Drawing.Color.White;
+            this.ProductCategoryDropdown.ItemBorderColor = System.Drawing.Color.White;
+            this.ProductCategoryDropdown.ItemForeColor = System.Drawing.Color.Black;
+            this.ProductCategoryDropdown.ItemHeight = 26;
+            this.ProductCategoryDropdown.ItemHighLightColor = System.Drawing.Color.ForestGreen;
+            this.ProductCategoryDropdown.Location = new System.Drawing.Point(3, 335);
+            this.ProductCategoryDropdown.Name = "ProductCategoryDropdown";
+            this.ProductCategoryDropdown.Size = new System.Drawing.Size(267, 32);
+            this.ProductCategoryDropdown.TabIndex = 19;
+            this.ProductCategoryDropdown.Text = "Category";
             // 
             // TextBoxQuantityProduct
             // 
@@ -1471,6 +1487,7 @@
             this.TextBoxQuantityProduct.TextPlaceholder = "Enter Quantity";
             this.TextBoxQuantityProduct.UseSystemPasswordChar = false;
             this.TextBoxQuantityProduct.WordWrap = true;
+            this.TextBoxQuantityProduct.Click += new System.EventHandler(this.TextBoxQuantityProduct_Click);
             // 
             // TextBoxPriceProduct
             // 
@@ -1545,6 +1562,7 @@
             this.TextBoxPriceProduct.TextPlaceholder = "Enter Price";
             this.TextBoxPriceProduct.UseSystemPasswordChar = false;
             this.TextBoxPriceProduct.WordWrap = true;
+            this.TextBoxPriceProduct.Click += new System.EventHandler(this.TextBoxPriceProduct_Click);
             // 
             // TextBoxNameProduct
             // 
@@ -1619,6 +1637,7 @@
             this.TextBoxNameProduct.TextPlaceholder = "Enter Name";
             this.TextBoxNameProduct.UseSystemPasswordChar = false;
             this.TextBoxNameProduct.WordWrap = true;
+            this.TextBoxNameProduct.Click += new System.EventHandler(this.TextBoxNameProduct_Click);
             // 
             // TextBoxIDProduct
             // 
@@ -1693,6 +1712,7 @@
             this.TextBoxIDProduct.TextPlaceholder = "Enter ID";
             this.TextBoxIDProduct.UseSystemPasswordChar = false;
             this.TextBoxIDProduct.WordWrap = true;
+            this.TextBoxIDProduct.Click += new System.EventHandler(this.TextBoxIDProduct_Click);
             // 
             // bunifuLabel6
             // 
@@ -2202,7 +2222,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2565,7 +2585,7 @@
         private System.Windows.Forms.PictureBox BarIndicator3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel bunifuShadowPanel2;
-        private Bunifu.UI.WinForms.BunifuDropdown CategoryDropdown;
+        private Bunifu.UI.WinForms.BunifuDropdown ProductCategoryDropdown;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox TextBoxIDProduct;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
@@ -2580,7 +2600,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton SellButton;
         private Bunifu.UI.WinForms.BunifuDataGridView DataGridViewProducts;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton addButtonProduct;
-        private Bunifu.UI.WinForms.BunifuDropdown CategoryDropdown2;
+        private Bunifu.UI.WinForms.BunifuDropdown ProductCategoryDropdownSearch;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton updateButtonProduct;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton deleteButtonProduct;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton refreshButtonProduct;
@@ -2602,5 +2622,6 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton6;
         private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuCustomLabel LabelMessageProduct;
     }
 }

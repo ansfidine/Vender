@@ -27,7 +27,7 @@ namespace Vender
             bunifuFormDock1.SubscribeControlToDragEvents(CategoryPage);
         }
 
-        //Add Category
+        //Add Category implementation
         private void AddCategory()
         {
             try
@@ -50,7 +50,7 @@ namespace Vender
             }
             
         }
-        //Clear Function
+        //Clear Functions implementation
         private void ClearCategory()
         {
             TextBoxIDCategory.Clear();
@@ -66,8 +66,15 @@ namespace Vender
             TextBoxQuantityProduct.Clear();
 
         }
+        private void ClearSellers()
+        {
+            TextBoxIDSellers.Clear();
+            TextBoxNameSellers.Clear();
+            TextBoxPasswordSellers.Clear();
+            TextBoxPhoneSellers.Clear();
+        }
 
-        //Update Category 
+        //Update Category implementation
         private void UpdateCategory()
        
         {
@@ -102,7 +109,7 @@ namespace Vender
             }
             
         }
-        //Delete Category
+        //Delete Category implementation
         private void DeleteCategory()
         {
             try
@@ -127,7 +134,7 @@ namespace Vender
             
         }
 
-        //Get Table Function
+        //Get Table Function implementation
         private void getTable(DataGridView Grid,string sTable)
         {
             string selectedTable = sTable;
@@ -139,7 +146,7 @@ namespace Vender
             Grid.DataSource = table;
         }
 
-        // getCagory function used on Manage product section
+        // getCagory function implementation used on Manage product section
 
         private void getCategory()
         {
@@ -154,7 +161,7 @@ namespace Vender
             ProductCategoryDropdownSearch.ValueMember = "Name";
         }
 
-        //Add Products function used on Manage product section
+        //Add Products function implementation used on Manage product section
         private void AddProducts()
         {
             try
@@ -179,7 +186,7 @@ namespace Vender
            
         }
 
-        //Update product function used on Manage Product Section
+        //Update product function implementation used on Manage Product Section
         private void UpdateProduct()
         {
             try
@@ -214,7 +221,7 @@ namespace Vender
 
         }
 
-        //Delete product function used on Manage Product Section
+        //Delete product function implementation used on Manage Product Section
         private void DeleteProduct()
         {
             try
@@ -237,6 +244,109 @@ namespace Vender
                 LabelMessageProduct.Text = "Delete Failed ";
             }
         }
+
+        //
+        //Add function implementation used on Sellers section
+        //
+        private void AddSellers()
+        {
+            try
+            {
+
+                string insertQuery = "INSERT INTO Sellers VALUES(" + TextBoxIDSellers.Text + ",'" + TextBoxNameSellers.Text + "','" + TextBoxPasswordSellers.Text + "','" + TextBoxPhoneSellers.Text + "')";
+                SqlCommand cmd = new SqlCommand(insertQuery, dBCon.GetCon());
+                dBCon.OpenCon();
+                cmd.ExecuteNonQuery();
+                LabelMessageSellers.ForeColor = Color.Green;
+                LabelMessageSellers.Text = ("Seller " +TextBoxNameSellers.Text+" Added Successfully");
+                dBCon.CloseCon();
+                getTable(DataGridViewSellers, "Sellers");
+                ClearSellers();
+
+            }
+            catch
+            {
+                LabelMessageSellers.ForeColor = Color.Red;
+                LabelMessageSellers.Text = "Failed to add Sellers";
+            }
+        }
+
+        //
+        //Update function implementation used on Sellers section
+        //
+        private void UpdateSellers()
+        {
+            try
+            {
+                if (TextBoxIDSellers.Text == "" || TextBoxNameSellers.Text == "" || TextBoxPasswordSellers.Text == "" || TextBoxPhoneSellers.Text == "")
+                {
+                    LabelMessageProduct.ForeColor = Color.Red;
+                    LabelMessageSellers.Text = ("Warning! missing informations");
+                }
+
+                else
+                {
+                    string updateQuery = "UPDATE Sellers SET Name='" + TextBoxNameSellers.Text + "',Password ='" + TextBoxPasswordSellers.Text + "',Phone='" + TextBoxPhoneSellers.Text + "' WHERE ID =" + TextBoxIDSellers.Text + " ";
+                    SqlCommand cmd = new SqlCommand(updateQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
+                    cmd.ExecuteNonQuery();
+                    LabelMessageSellers.ForeColor = Color.Green;
+                    LabelMessageSellers.Text = ("Seller "+TextBoxNameSellers.Text+" updated Successfully");
+                    dBCon.CloseCon();
+                    getTable(DataGridViewSellers, "Sellers");
+                    ClearSellers();
+                }
+
+
+
+            }
+            catch
+            {
+                LabelMessageSellers.ForeColor = Color.Red;
+                LabelMessageSellers.Text = "Update Failed ";
+            }
+        }
+
+        //
+        //DeleteSellers function implementation used on Sellers section
+        //
+        private void DeleteSellers()
+        {
+            try
+            {
+
+                string deleteQuery = "DELETE FROM Sellers WHERE ID =" + TextBoxIDSellers.Text + "";
+                SqlCommand cmd = new SqlCommand(deleteQuery, dBCon.GetCon());
+                dBCon.OpenCon();
+                cmd.ExecuteNonQuery();
+                LabelMessageSellers.ForeColor = Color.Green;
+                LabelMessageSellers.Text = ("Seller "+TextBoxNameSellers.Text+" deleted Successfully");
+                dBCon.CloseCon();
+                getTable(DataGridViewSellers, "Sellers");
+                ClearSellers();
+
+            }
+            catch
+            {
+                LabelMessageSellers.ForeColor = Color.Red;
+                LabelMessageSellers.Text = "Delete Failed ";
+            }
+        }
+
+        //
+        //Search function
+        //
+        private void SearchSellers()
+        {
+            string selectQuery = "SELECT * FROM Sellers WHERE Name LIKE '%"+TextBoxSearchSellers.Text+"%'";
+            SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            DataGridViewSellers.DataSource = table;
+            dBCon.CloseCon();
+        }
+
         private void MoveOnMenu(Object sender, int position, int R,int G,int B)
         {
             indicator.BackColor = Color.FromArgb(R,G,B);
@@ -248,20 +358,17 @@ namespace Vender
         {
             getTable(DataGridViewCategory,"Category");
             getTable(DataGridViewProducts, "Product");
+            getTable(DataGridViewSellers, "Sellers");
             getCategory();
 
         }
 
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
+
+        //
+        //Lateral Button
+        //
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             indicator.BackColor = Color.FromArgb(96, 0, 152);
@@ -275,6 +382,7 @@ namespace Vender
             indicator.BackColor= Color.ForestGreen;
             indicator.Top = ((Control)sender).Top;
             bunifuAdminPages.SetPage(1);
+            getCategory();
         }
 
         private void SellersButton_Click(object sender, EventArgs e)
@@ -283,8 +391,6 @@ namespace Vender
             indicator.Top = ((Control)sender).Top;
             bunifuAdminPages.SetPage(2);
         }
-
-        
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
@@ -307,6 +413,9 @@ namespace Vender
             this.Hide();
         }
 
+        //
+        //Minimize Button
+        //
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -322,6 +431,36 @@ namespace Vender
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        /// 
+        /// All Called function on Category Section
+        /// 
+        private void DataGridViewCategory_Click(object sender, EventArgs e)
+        {
+            LabelMessageCategory.ForeColor = Color.Blue;
+            LabelMessageCategory.Text = "Warning! don't change the ID";
+            TextBoxIDCategory.Text = DataGridViewCategory.SelectedRows[0].Cells[0].Value.ToString();
+            TextBoxNameCategory.Text = DataGridViewCategory.SelectedRows[0].Cells[1].Value.ToString();
+            TextBoxDescriptionCategory.Text = DataGridViewCategory.SelectedRows[0].Cells[2].Value.ToString();
+        }
+        private void ProductCategoryDropdownSearch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM Product WHERE Category ='" + ProductCategoryDropdownSearch.SelectedValue.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            DataGridViewProducts.DataSource = table;
+        }
 
         private void AddButtonCategory_Click(object sender, EventArgs e)
         {
@@ -337,28 +476,6 @@ namespace Vender
         {
             UpdateCategory();
         }
-
-      
-
-        private void DataGridViewCategory_Click(object sender, EventArgs e)
-        {
-            LabelMessageCategory.ForeColor = Color.Blue;
-            LabelMessageCategory.Text = "Warning! don't change the ID";
-            TextBoxIDCategory.Text = DataGridViewCategory.SelectedRows[0].Cells[0].Value.ToString();
-            TextBoxNameCategory.Text= DataGridViewCategory.SelectedRows[0].Cells[1].Value.ToString();
-            TextBoxDescriptionCategory.Text= DataGridViewCategory.SelectedRows[0].Cells[2].Value.ToString();
-        }
-        private void DataGridViewProducts_Click(object sender, EventArgs e)
-        {
-            LabelMessageProduct.ForeColor = Color.Blue;
-            LabelMessageProduct.Text = "Warning! don't change the ID";
-            TextBoxIDProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[0].Value.ToString();
-            TextBoxNameProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[1].Value.ToString();
-            TextBoxPriceProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[2].Value.ToString();
-            TextBoxQuantityProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[3].Value.ToString();
-            ProductCategoryDropdown.SelectedValue = DataGridViewProducts.SelectedRows[0].Cells[4].Value.ToString();
-        }
-
         private void TextBoxIDCategory_Click(object sender, EventArgs e)
         {
             LabelMessageCategory.Text = "";
@@ -374,25 +491,21 @@ namespace Vender
             LabelMessageCategory.Text = "";
         }
 
-        private void TextBoxIDProduct_Click(object sender, EventArgs e)
-        {
-            LabelMessageProduct.Text = "";
-        }
+        /// 
+        /// All Called function on Products Section
+        /// 
 
-        private void TextBoxNameProduct_Click(object sender, EventArgs e)
+        private void DataGridViewProducts_Click(object sender, EventArgs e)
         {
-            LabelMessageProduct.Text = "";
+            LabelMessageProduct.ForeColor = Color.Blue;
+            LabelMessageProduct.Text = "Warning! don't change the ID";
+            TextBoxIDProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[0].Value.ToString();
+            TextBoxNameProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[1].Value.ToString();
+            TextBoxPriceProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[2].Value.ToString();
+            TextBoxQuantityProduct.Text = DataGridViewProducts.SelectedRows[0].Cells[3].Value.ToString();
+            ProductCategoryDropdown.SelectedValue = DataGridViewProducts.SelectedRows[0].Cells[4].Value.ToString();
         }
-
-        private void TextBoxPriceProduct_Click(object sender, EventArgs e)
-        {
-            LabelMessageProduct.Text = "";
-        }
-
-        private void TextBoxQuantityProduct_Click(object sender, EventArgs e)
-        {
-            LabelMessageProduct.Text = "";
-        }
+      
 
         private void addButtonProduct_Click(object sender, EventArgs e)
         {
@@ -413,15 +526,82 @@ namespace Vender
         {
             getTable(DataGridViewProducts, "Product");
         }
-
-        private void ProductCategoryDropdownSearch_SelectionChangeCommitted(object sender, EventArgs e)
+        private void TextBoxIDProduct_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT * FROM Product WHERE Category ='"+ProductCategoryDropdownSearch.SelectedValue.ToString()+"'";
-            SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            DataGridViewProducts.DataSource = table;
+            LabelMessageProduct.Text = "";
         }
+
+        private void TextBoxNameProduct_Click(object sender, EventArgs e)
+        {
+            LabelMessageProduct.Text = "";
+        }
+
+        private void TextBoxPriceProduct_Click(object sender, EventArgs e)
+        {
+            LabelMessageProduct.Text = "";
+        }
+
+        private void TextBoxQuantityProduct_Click(object sender, EventArgs e)
+        {
+            LabelMessageProduct.Text = "";
+        }
+
+
+
+        /// 
+        /// All Called function on Sellers Section
+        /// 
+        private void DataGridViewSellers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LabelMessageSellers.ForeColor = Color.Blue;
+            LabelMessageSellers.Text = "Warning! don't change the ID";
+            TextBoxIDSellers.Text = DataGridViewSellers.SelectedRows[0].Cells[0].Value.ToString();
+            TextBoxNameSellers.Text = DataGridViewSellers.SelectedRows[0].Cells[1].Value.ToString();
+            TextBoxPasswordSellers.Text = DataGridViewSellers.SelectedRows[0].Cells[2].Value.ToString();
+            TextBoxPhoneSellers.Text = DataGridViewSellers.SelectedRows[0].Cells[3].Value.ToString();
+
+        }
+
+        private void ButtonAddSellers_Click(object sender, EventArgs e)
+        {
+            AddSellers();
+        }
+
+        private void ButtonUpdateSellers_Click(object sender, EventArgs e)
+        {
+            UpdateSellers();
+        }
+
+        private void ButtonDeleteSellers_Click(object sender, EventArgs e)
+        {
+            DeleteSellers();
+        }
+
+        private void ButtonSearchSellers_Click(object sender, EventArgs e)
+        {
+            SearchSellers();
+        }
+
+        private void TextBoxIDSellers_Click(object sender, EventArgs e)
+        {
+            LabelMessageSellers.Text ="";
+        }
+
+        private void TextBoxNameSellers_Click(object sender, EventArgs e)
+        {
+            LabelMessageSellers.Text = "";
+        }
+
+        private void TextBoxPasswordSellers_Click(object sender, EventArgs e)
+        {
+            LabelMessageSellers.Text = "";
+        }
+
+        private void TextBoxPhoneSellers_Click(object sender, EventArgs e)
+        {
+            LabelMessageSellers.Text = "";
+        }
+
+       
     }
 }

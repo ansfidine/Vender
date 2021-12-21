@@ -14,6 +14,85 @@ namespace Vender
     public partial class Login : Form
     {
         DBConnect dBCon = new DBConnect();
+
+        //
+        //AdminLogin function
+        //
+        private void AdminLogin()
+        {
+            if (TextBoxadminUsername.Text.Equals("") && TextBoxadminUPassword.Text.Equals(""))
+            {
+                LabelErrorAdmin.Text = ("Enter username and password");
+            }
+            else if (TextBoxadminUsername.Text == "")
+            {
+                LabelErrorAdmin.Text = ("Enter username");
+            }
+            else if (TextBoxadminUPassword.Text == "")
+            {
+                LabelErrorAdmin.Text = ("Enter password");
+            }
+
+            else
+            {
+
+
+                Admin administrator = new Admin(TextBoxadminUsername.Text, TextBoxadminUPassword.Text,"admin","username","password");
+                administrator.Login();
+                if (administrator.GetState() == "success")
+                {
+                    AdminForm adminForm = new AdminForm();
+                    adminForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    LabelErrorAdmin.Text = ("Incorrect username or password ");
+                }
+
+            }
+
+            
+        }
+        //
+        //SellerLogin function 
+        //
+        private void SellerLogin()
+        {
+            if (TextBoxUsernameSellerLogin.Text.Equals("") && TexteBoxPaswordSellerLogin.Text.Equals(""))
+            {
+                LabelSellerMessage.Text = ("Enter username and password");
+            }
+            else if (TextBoxUsernameSellerLogin.Text == "")
+            {
+                LabelSellerMessage.Text = ("Enter username");
+            }
+            else if (TexteBoxPaswordSellerLogin.Text == "")
+            {
+                LabelSellerMessage.Text = ("Enter password");
+            }
+
+            else
+            {
+
+
+                Admin Seller = new Admin(TextBoxUsernameSellerLogin.Text, TexteBoxPaswordSellerLogin.Text, "Sellers","Name","Password");
+                Seller.Login();
+                if (Seller.GetState() == "success")
+                {
+                    SellingForm sell = new SellingForm();
+                    sell.Show();
+                    sell.labelShowSellerName.Text = TextBoxUsernameSellerLogin.Text;
+                    this.Hide();              
+                }
+                else
+                {
+                    LabelSellerMessage.Text = ("Incorrect username or password ");
+                }
+
+            }
+
+        }
         public Login()
         {
             InitializeComponent();
@@ -56,55 +135,11 @@ namespace Vender
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            bunifuTextBox1.Clear();
-            bunifuTextBox2.Clear();
+            TextBoxUsernameSellerLogin.Clear();
+            TexteBoxPaswordSellerLogin.Clear();
         }
 
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
-        {
-            bunifuTextBox1.Clear();
-            bunifuTextBox2.Clear();
-        }
-
-        private void bunifuButton4_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-            if (TextBoxadminUsername.Text.Equals("") && TextBoxadminUPassword.Text.Equals(""))
-            {
-                LabelErrorAdmin.Text = ("Enter username and password");
-            }
-            else if (TextBoxadminUsername.Text == "")
-            {
-                LabelErrorAdmin.Text = ("Enter username");
-            }
-            else if (TextBoxadminUPassword.Text == "")
-            {
-                LabelErrorAdmin.Text = ("Enter password");
-            }
-            
-            else
-            {
-              
-
-                 Admin administrator = new Admin(TextBoxadminUsername.Text, TextBoxadminUPassword.Text);
-                 administrator.Login();             
-                 if(administrator.GetState() =="success")
-                 {
-                     AdminForm adminForm = new AdminForm();             
-                     adminForm.Show();
-                     this.Hide();
-                 }
-                 else
-                 {                 
-                    LabelErrorAdmin.Text = ("Incorrect username or password ");
-                 }
-
-            }
-        }
+   
 
         private void TextBoxadminUsername_MouseClick(object sender, MouseEventArgs e)
         {
@@ -114,6 +149,42 @@ namespace Vender
         private void TextBoxadminUPassword_Click(object sender, EventArgs e)
         {
             LabelErrorAdmin.Text = "";
+        }
+
+        private void ButtonLoginSeller_Click(object sender, EventArgs e)
+        {
+            SellerLogin();
+        }
+
+        private void ClearButtonSeller_Click(object sender, EventArgs e)
+        {
+            TextBoxUsernameSellerLogin.Clear();
+            TexteBoxPaswordSellerLogin.Clear();
+        }
+
+        private void AdminLoginButton_Click(object sender, EventArgs e)
+        {
+            AdminLogin();
+        }
+
+        private void TextBoxUsernameSellerLogin_TextChanged(object sender, EventArgs e)
+        {
+            LabelSellerMessage.Text = "";
+        }
+
+        private void TexteBoxPaswordSellerLogin_TextChanged(object sender, EventArgs e)
+        {
+            LabelSellerMessage.Text = "";
+        }
+
+        private void TextBoxUsernameSellerLogin_Click(object sender, EventArgs e)
+        {
+            LabelSellerMessage.Text = "";
+        }
+
+        private void TexteBoxPaswordSellerLogin_Click(object sender, EventArgs e)
+        {
+            LabelSellerMessage.Text = "";
         }
     }
 }

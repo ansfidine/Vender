@@ -83,6 +83,56 @@ namespace Vender.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_1080px {
+            get {
+                object obj = ResourceManager.GetObject("add_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_image_1080px {
+            get {
+                object obj = ResourceManager.GetObject("add_image_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_tag_1080px {
+            get {
+                object obj = ResourceManager.GetObject("add_tag_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_trash_1080px {
+            get {
+                object obj = ResourceManager.GetObject("add_trash_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_group_man_man_1080px {
+            get {
+                object obj = ResourceManager.GetObject("add_user_group_man_man_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_500px {
             get {
                 object obj = ResourceManager.GetObject("cancel_500px", resourceCulture);
@@ -126,6 +176,26 @@ namespace Vender.Properties {
         internal static System.Drawing.Bitmap chart2 {
             get {
                 object obj = ResourceManager.GetObject("chart2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap create_order_1080px {
+            get {
+                object obj = ResourceManager.GetObject("create_order_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_1080px {
+            get {
+                object obj = ResourceManager.GetObject("Delete_1080px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +253,16 @@ namespace Vender.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logout_1080px {
+            get {
+                object obj = ResourceManager.GetObject("Logout_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logout1 {
             get {
                 object obj = ResourceManager.GetObject("Logout1", resourceCulture);
@@ -196,6 +276,16 @@ namespace Vender.Properties {
         internal static System.Drawing.Bitmap Logout2 {
             get {
                 object obj = ResourceManager.GetObject("Logout2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap male_user_1080px {
+            get {
+                object obj = ResourceManager.GetObject("male_user_1080px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +363,36 @@ namespace Vender.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_1080px {
+            get {
+                object obj = ResourceManager.GetObject("print_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rotate_right_1080px {
+            get {
+                object obj = ResourceManager.GetObject("rotate_right_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screen_Shot_2021_12_08_at_11_32_52_PM {
+            get {
+                object obj = ResourceManager.GetObject("Screen Shot 2021-12-08 at 11.32.52 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sellers1 {
             get {
                 object obj = ResourceManager.GetObject("sellers1", resourceCulture);
@@ -326,6 +446,26 @@ namespace Vender.Properties {
         internal static System.Drawing.Bitmap tag_window2 {
             get {
                 object obj = ResourceManager.GetObject("tag_window2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_left_rotation_1080px {
+            get {
+                object obj = ResourceManager.GetObject("update_left_rotation_1080px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_left_rotation_1080px1 {
+            get {
+                object obj = ResourceManager.GetObject("update_left_rotation_1080px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -398,6 +398,13 @@ namespace Vender
             indicator.Top = ((Control)sender).Top;
             bunifuAdminPages.SetPage(3);
         }
+        private void SellButton_Click(object sender, EventArgs e)
+        {
+            SellingForm sell = new SellingForm();
+            sell.Show();
+            sell.labelShowSellerName.Text = "Admin";
+            this.Hide();
+        }
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
@@ -602,6 +609,6 @@ namespace Vender
             LabelMessageSellers.Text = "";
         }
 
-       
+      
     }
 }

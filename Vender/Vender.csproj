@@ -109,6 +109,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CDGVPrinter.cs" />
     <Compile Include="Class\Login.cs" />
     <Compile Include="Class\DBConnect.cs" />
     <Compile Include="DatabaseDataSet.Designer.cs">
@@ -209,6 +210,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Screen Shot 2021-12-08 at 11.32.52 PM.png" />
+    <None Include="Resources\Delete_1080px.png" />
+    <None Include="Resources\update_left_rotation_1080px1.png" />
+    <None Include="Resources\rotate_right_1080px.png" />
+    <None Include="Resources\print_1080px.png" />
+    <None Include="Resources\male_user_1080px.png" />
+    <None Include="Resources\Logout_1080px.png" />
+    <None Include="Resources\create_order_1080px.png" />
+    <None Include="Resources\add_user_group_man_man_1080px.png" />
+    <None Include="Resources\add_trash_1080px.png" />
+    <None Include="Resources\add_tag_1080px.png" />
+    <None Include="Resources\add_image_1080px.png" />
+    <None Include="Resources\add_1080px.png" />
+    <None Include="Resources\update_left_rotation_1080px.png" />
     <None Include="Resources\grocery-products-icon-png-3.png" />
     <None Include="Resources\minimiz.png" />
     <None Include="Resources\tag_window2.png" />

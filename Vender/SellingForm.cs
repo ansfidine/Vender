@@ -146,11 +146,11 @@ namespace Vender
         {
             if(DropdownPrint.SelectedItem.ToString()=="Order")
             {
-                Print("Order", DataGridViewOrder);
+                Print("Receipt", DataGridViewOrder);
             }
             else
             {
-                Print("Sell List", DataGridViewSellList);
+                Print("Seller Bills", DataGridViewSellList);
             }
         }
 

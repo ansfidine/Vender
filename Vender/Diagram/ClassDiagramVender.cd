@@ -46,7 +46,7 @@
   <Class Name="Vender.SellingForm">
     <Position X="10.25" Y="5" Width="2" />
     <TypeIdentifier>
-      <HashCode>EIQwIABAACAIAxUCBBDEpDCKRYA6FzwC8IHAIQRFAAM=</HashCode>
+      <HashCode>EIQwIABQACAIAxUCBBDEpDCKRYA6FzwC8IHAIQRFAAM=</HashCode>
       <FileName>SellingForm.cs</FileName>
     </TypeIdentifier>
   </Class>

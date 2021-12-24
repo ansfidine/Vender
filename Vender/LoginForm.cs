@@ -13,6 +13,7 @@ namespace Vender
 {
     public partial class Login : Form
     {
+        public string sellerName;
         DBConnect dBCon = new DBConnect();
 
         //
@@ -83,6 +84,7 @@ namespace Vender
                     SellingForm sell = new SellingForm();
                     sell.Show();
                     sell.labelShowSellerName.Text = TextBoxUsernameSellerLogin.Text;
+                    sellerName = TextBoxUsernameSellerLogin.Text;
                     this.Hide();              
                 }
                 else
@@ -91,6 +93,7 @@ namespace Vender
                 }
 
             }
+
 
         }
         public Login()

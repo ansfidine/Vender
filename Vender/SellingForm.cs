@@ -17,7 +17,7 @@ namespace Vender
         int grandTotal = 0, n = 0;
         DBConnect dBCon = new DBConnect();
         DGVPrinter printer = new DGVPrinter();
-        
+        Boolean totalAmountAdd=false;
         public SellingForm()
         {
             InitializeComponent();
@@ -63,15 +63,17 @@ namespace Vender
             DataGridViewProduct.DataSource = table;
         }
 
-        private void getSellTable()
+        private void getSellTable(string name)
         {
-            string selectQuery = "SELECT * FROM Bill WHERE Name ='"+labelShowSellerName.Text+"'";
+            string selectQuery = "SELECT * FROM Bill WHERE Name ='"+name+"'";
             SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             adapter.Fill(table);
             DataGridViewSellList.DataSource = table;
         }
+
+     
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
@@ -91,10 +93,12 @@ namespace Vender
 
         private void SellingForm_Load(object sender, EventArgs e)
         {
+            Login lg = new Login();
+            labelShowSellerName.Text= lg.sellerName;
             labelDate.Text = DateTime.Today.ToShortDateString();
             getTable();
-            getSellTable();
             getCategory();
+            getSellTable(labelShowSellerName.Text);
         }
 
         private void DataGridViewProduct_Click(object sender, EventArgs e)
@@ -126,7 +130,7 @@ namespace Vender
                 LabelMessageBill.ForeColor = Color.Green;
                 LabelMessageBill.Text = ("Order Added Successfully");
                 dBCon.CloseCon();
-                getSellTable();
+                getSellTable(labelShowSellerName.Text);
                
 
             }
@@ -144,13 +148,30 @@ namespace Vender
 
         private void ButtonPrint_Click(object sender, EventArgs e)
         {
-            if(DropdownPrint.SelectedItem.ToString()=="Order")
+            if(DropdownPrint.SelectedIndex < 0)
             {
-                Print("Receipt", DataGridViewOrder);
+                LabelMessageBill.ForeColor = Color.Red;
+                LabelMessageBill.Text = "Please select  what to print";
             }
             else
             {
-                Print("Seller Bills", DataGridViewSellList);
+                LabelMessageBill.Text = "";
+                if (DropdownPrint.SelectedItem.ToString() == "Order")
+                {
+                    if(totalAmountAdd == false)
+                    {
+                        LabelMessageBill.ForeColor = Color.Red;
+                        LabelMessageBill.Text = "Total Amount not added";
+                    }
+                    else
+                    {
+                        Print("Receipt", DataGridViewOrder);
+                    }
+                }
+                else
+                {
+                    Print("Seller Bills", DataGridViewSellList);
+                }
             }
         }
 
@@ -164,6 +185,7 @@ namespace Vender
             addRow.Cells[3].Value = "";
             addRow.Cells[4].Value = labelAmount.Text;
             DataGridViewOrder.Rows.Add(addRow);
+            totalAmountAdd = true;
         }
 
         private void CategoryDropdown_SelectionChangeCommitted(object sender, EventArgs e)
@@ -186,11 +208,12 @@ namespace Vender
             DataGridViewOrder.Rows.Clear();
             grandTotal = 0;
             labelAmount.Text = "0$";
+            totalAmountAdd = false;
         }
 
         private void ButtonRefresh_Click(object sender, EventArgs e)
         {
-            getSellTable();
+            getSellTable(labelShowSellerName.Text);
         }
 
         private void ButtonAddOrder_Click(object sender, EventArgs e)

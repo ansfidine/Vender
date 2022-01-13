@@ -189,5 +189,10 @@ namespace Vender
         {
             LabelSellerMessage.Text = "";
         }
+
+        private void AdminPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

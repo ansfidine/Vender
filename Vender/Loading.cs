@@ -35,5 +35,10 @@ namespace Vender
                 LoginPage.Show();
             }
         }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -59,6 +59,7 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.SellersPage = new System.Windows.Forms.TabPage();
+            this.LabelSellerMessage = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ButtonLoginSeller = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.ClearButtonSeller = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -74,7 +75,6 @@
             this.AdminLoginButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.TextBoxadminUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.LabelSellerMessage = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -333,10 +333,10 @@
             this.bunifuPages1.Location = new System.Drawing.Point(368, 0);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.SellersPage;
-            this.bunifuPages1.PageIndex = 0;
-            this.bunifuPages1.PageName = "SellersPage";
-            this.bunifuPages1.PageTitle = "Sellers";
+            this.bunifuPages1.Page = this.AdminPage;
+            this.bunifuPages1.PageIndex = 1;
+            this.bunifuPages1.PageName = "AdminPage";
+            this.bunifuPages1.PageTitle = "Admin";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(409, 422);
             this.bunifuPages1.TabIndex = 1;
@@ -375,6 +375,16 @@
             this.SellersPage.Size = new System.Drawing.Size(401, 396);
             this.SellersPage.TabIndex = 0;
             this.SellersPage.Text = "Sellers";
+            // 
+            // LabelSellerMessage
+            // 
+            this.LabelSellerMessage.AutoSize = true;
+            this.LabelSellerMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSellerMessage.ForeColor = System.Drawing.Color.Red;
+            this.LabelSellerMessage.Location = new System.Drawing.Point(38, 346);
+            this.LabelSellerMessage.Name = "LabelSellerMessage";
+            this.LabelSellerMessage.Size = new System.Drawing.Size(0, 21);
+            this.LabelSellerMessage.TabIndex = 17;
             // 
             // ButtonLoginSeller
             // 
@@ -666,6 +676,7 @@
             this.AdminPage.Size = new System.Drawing.Size(401, 396);
             this.AdminPage.TabIndex = 1;
             this.AdminPage.Text = "Admin";
+            this.AdminPage.Click += new System.EventHandler(this.AdminPage_Click);
             // 
             // LabelErrorAdmin
             // 
@@ -961,16 +972,6 @@
             this.bunifuSeparator2.TabIndex = 9;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
-            // 
-            // LabelSellerMessage
-            // 
-            this.LabelSellerMessage.AutoSize = true;
-            this.LabelSellerMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSellerMessage.ForeColor = System.Drawing.Color.Red;
-            this.LabelSellerMessage.Location = new System.Drawing.Point(38, 346);
-            this.LabelSellerMessage.Name = "LabelSellerMessage";
-            this.LabelSellerMessage.Size = new System.Drawing.Size(0, 21);
-            this.LabelSellerMessage.TabIndex = 17;
             // 
             // Login
             // 

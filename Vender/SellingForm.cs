@@ -216,6 +216,11 @@ namespace Vender
             getSellTable(labelShowSellerName.Text);
         }
 
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private void ButtonAddOrder_Click(object sender, EventArgs e)
         {
            if(TextBoxName.Text=="" || TextBoxQuantity.Text=="")

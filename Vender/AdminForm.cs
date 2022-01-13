@@ -13,7 +13,7 @@ namespace Vender
 {
     public partial class AdminForm : Form
     {
-       
+        Bunifu.DataViz.WinForms.DataPoint datapoint1;
         //database Object
         private DBConnect dBCon = new DBConnect(); 
         public AdminForm()
@@ -25,6 +25,27 @@ namespace Vender
             bunifuFormDock1.SubscribeControlToDragEvents(SellersPage);
             bunifuFormDock1.SubscribeControlToDragEvents(AboutPage);
             bunifuFormDock1.SubscribeControlToDragEvents(CategoryPage);
+            bunifuFormDock1.SubscribeControlToDragEvents(PasswordPage);
+            bunifuFormDock1.SubscribeControlToDragEvents(BillsPage);
+
+            //DataViz Chart Theme Color
+            DataViz1.colorSet.Add(Color.FromArgb(139, 0, 220));
+        }
+
+        private void dataViz()
+        {
+            datapoint1 = new Bunifu.DataViz.WinForms.DataPoint(Bunifu.DataViz.WinForms.BunifuDataViz._type.Bunifu_splineArea);
+            Bunifu.DataViz.WinForms.Canvas canvas = new Bunifu.DataViz.WinForms.Canvas();
+            Random random = new Random();
+            datapoint1.addLabely("MON", random.Next(0, 50).ToString());
+            datapoint1.addLabely("TUE", random.Next(0, 50).ToString());
+            datapoint1.addLabely("WED", random.Next(0, 50).ToString());
+            datapoint1.addLabely("FRI", random.Next(0, 50).ToString());
+            datapoint1.addLabely("SAT", random.Next(0, 50).ToString());
+            datapoint1.addLabely("SAN", random.Next(0, 50).ToString());
+
+            canvas.addData(datapoint1);
+            DataViz1.Render(canvas);
         }
 
         //Add Category implementation
@@ -347,6 +368,9 @@ namespace Vender
             dBCon.CloseCon();
         }
 
+        //
+        //MoveOnMenu function 
+        //
         private void MoveOnMenu(Object sender, int position, int R,int G,int B)
         {
             indicator.BackColor = Color.FromArgb(R,G,B);
@@ -356,10 +380,16 @@ namespace Vender
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
+            bunifuElipse1.ApplyElipse(bunifuGradientPanel2);
+            bunifuElipse1.ApplyElipse(bunifuGradientPanel3);
+            bunifuElipse1.ApplyElipse(bunifuGradientPanel4);
+            dataViz();
             getTable(DataGridViewCategory,"Category");
             getTable(DataGridViewProducts, "Product");
             getTable(DataGridViewSellers, "Sellers");
             getCategory();
+            indic.Hide();
+
 
         }
 
@@ -371,6 +401,8 @@ namespace Vender
         //
         private void DashboardButton_Click(object sender, EventArgs e)
         {
+            indicator.Show();
+            indic.Hide();
             indicator.BackColor = Color.FromArgb(96, 0, 152);
             indicator.Top=((Control)sender).Top;
             bunifuAdminPages.SetPage(0);
@@ -379,6 +411,8 @@ namespace Vender
 
         private void CategoriesButton_Click(object sender, EventArgs e)
         {
+            indicator.Show();
+            indic.Hide();
             indicator.BackColor= Color.ForestGreen;
             indicator.Top = ((Control)sender).Top;
             bunifuAdminPages.SetPage(1);
@@ -387,6 +421,8 @@ namespace Vender
 
         private void SellersButton_Click(object sender, EventArgs e)
         {
+            indicator.Show();
+            indic.Hide();
             indicator.BackColor = Color.FromArgb(55, 206, 211);
             indicator.Top = ((Control)sender).Top;
             bunifuAdminPages.SetPage(2);
@@ -394,12 +430,16 @@ namespace Vender
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            indicator.Show();
+            indic.Hide();
             indicator.BackColor = Color.FromArgb(164, 36, 109);
             indicator.Top = ((Control)sender).Top;
             bunifuAdminPages.SetPage(3);
         }
         private void SellButton_Click(object sender, EventArgs e)
         {
+            indicator.Show();
+            indic.Hide();
             SellingForm sell = new SellingForm();
             sell.Show();
             sell.labelShowSellerName.Text = "Admin";
@@ -408,10 +448,28 @@ namespace Vender
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            
+            indicator.Show();
+            indic.Hide();
             MoveOnMenu(sender,4,96,155,235);
 
         }
+        private void BillButton_Click(object sender, EventArgs e)
+        {
+            indic.Show();
+            indicator.Hide();
+            indic.BackColor = Color.FromArgb(255, 0, 0);
+            indic.Top = ((Control)sender).Top;
+            bunifuAdminPages.SetPage(5);
+        }
+        private void PasswordButton_Click(object sender, EventArgs e)
+        {
+            indic.Show();
+            indicator.Hide();
+            indic.BackColor = Color.FromArgb(38, 17, 60);
+            indic.Top = ((Control)sender).Top;
+            bunifuAdminPages.SetPage(6);
+        }
+
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
@@ -444,6 +502,15 @@ namespace Vender
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void bunifuImageButton7_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuImageButton8_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -611,4 +678,5 @@ namespace Vender
 
       
     }
+    
 }

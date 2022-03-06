@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Vender.Login">
-    <Position X="1.75" Y="5" Width="2.25" />
+    <Position X="3.25" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>ABAACACSQCwAIAAAABCEAJECAoABGFQAIQABAQBxC0I=</HashCode>
-      <FileName>LoginForm.cs</FileName>
+      <HashCode>BBAACACSQCwCIAAAABCEAJECAoABGFQAIQABAQBxC0I=</HashCode>
+      <FileName>Forms\LoginForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Windows.Forms.Form" Collapsed="true">
@@ -12,42 +12,42 @@
     <TypeIdentifier />
   </Class>
   <Class Name="Vender.Loading">
-    <Position X="4.5" Y="5" Width="2.25" />
+    <Position X="6" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAQACAAAACAAEAAAAACEAAACAAAAMIAAAAAAAABEAAA=</HashCode>
-      <FileName>Loading.cs</FileName>
+      <HashCode>AIQACAAAACAAEAAAAACAAAACAAAAIIAAAAAACAAEAAA=</HashCode>
+      <FileName>Forms\Loading.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Vender.DBConnect">
-    <Position X="15.5" Y="7.5" Width="1.5" />
+    <Position X="19.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAABAAAAAAAAABAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\DBConnect.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Object">
-    <Position X="14.25" Y="3.5" Width="1.5" />
+    <Position X="18.25" Y="3.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Vender.Admin">
-    <Position X="13" Y="7.5" Width="1.5" />
+    <Position X="17" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAEAAAAAAAAAAAQCAAAAAAIAAAAADIAAQAAAAAAA=</HashCode>
       <FileName>Class\Login.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Vender.AdminForm">
-    <Position X="7.25" Y="5" Width="2.5" />
+    <Position X="8.75" Y="5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>dMCoAhjoIO4gAREKyADswT3WMPQVrFUgaolEAyBwnf4=</HashCode>
-      <FileName>AdminForm.cs</FileName>
+      <HashCode>f8C8IgjoIO6gARmKziD95T32MfQdvN0iasnECy1wvf8=</HashCode>
+      <FileName>Forms\AdminForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Vender.SellingForm">
-    <Position X="10.25" Y="5" Width="2" />
+    <Position X="11.75" Y="5" Width="2" />
     <TypeIdentifier>
-      <HashCode>EIQwIABQACAIAxUCBBDEpDCKRYA6FzwC8IHAIQRFAAM=</HashCode>
-      <FileName>SellingForm.cs</FileName>
+      <HashCode>EIQwIABQACAIAxUCBBDEpDGKRYA6FzwC8IHAIQRFAAM=</HashCode>
+      <FileName>Forms\SellingForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Windows.Forms.ContainerControl" Collapsed="true">
@@ -66,7 +66,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DGVPrinterHelper.LogManager">
-    <Position X="18" Y="7.25" Width="1.5" />
+    <Position X="22" Y="7.25" Width="1.5" />
     <NestedTypes>
       <Enum Name="DGVPrinterHelper.LogManager.Categories" Collapsed="true">
         <TypeIdentifier>
@@ -80,92 +80,49 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DGVPrinterHelper.LogWriter">
-    <Position X="18" Y="4.25" Width="1.5" />
+    <Position X="22" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAA=</HashCode>
       <FileName>Class\CDGVPrinter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DGVPrinterHelper.DGVCellDrawingEventArgs">
-    <Position X="22" Y="6.25" Width="1.5" />
+    <Position X="26" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAgAAAAAAAAAACQAAAAAAIAAAEAAAAAAA=</HashCode>
       <FileName>Class\CDGVPrinter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DGVPrinterHelper.Extensions">
-    <Position X="22.25" Y="4.25" Width="1.5" />
+    <Position X="26.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\CDGVPrinter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DGVPrinterHelper.DGVPrinter" Collapsed="true">
-    <Position X="14.25" Y="1.75" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.RowHeightSetting" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.Alignment" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.SizeType" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Class Name="DGVPrinterHelper.DGVPrinter.PrintDialogSettingsClass" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.ColumnWidthSetting" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Class Name="DGVPrinterHelper.DGVPrinter.rowdata" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.paging" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Class Name="DGVPrinterHelper.DGVPrinter.ImbeddedImage" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.Location" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Class Name="DGVPrinterHelper.DGVPrinter.PageDef" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-      <Enum Name="DGVPrinterHelper.DGVPrinter.PrintLocation" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Class\CDGVPrinter.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
+    <Position X="18.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>3l8qd9+X8t/kaFBjS+oO7skhbCrxPjww/j3/2N2C1m8=</HashCode>
       <FileName>Class\CDGVPrinter.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Vender.Forms.SignUp">
+    <Position X="0.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIACAIIAAAABCEABECAAABEBYAIAAAAAFAAAA=</HashCode>
+      <FileName>Forms\SignUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vender.About">
+    <Position X="14.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAAAAAACAAAECAAAgAAQAIAAAAABAIAA=</HashCode>
+      <FileName>Forms\About.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Delegate Name="DGVPrinterHelper.CellOwnerDrawEventHandler">
-    <Position X="20.25" Y="4.25" Width="1.5" />
+    <Position X="24.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Class\CDGVPrinter.cs</FileName>

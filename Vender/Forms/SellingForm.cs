@@ -57,7 +57,7 @@ namespace Vender
 
         private void getTable()
         {  
-            string selectQuery = "SELECT Name,Price FROM Product";
+            string selectQuery = "SELECT Name,Price,Quantity FROM Product";
             SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -195,7 +195,7 @@ namespace Vender
 
         private void CategoryDropdown_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT Name,Price FROM Product WHERE Category ='" + CategoryDropdown.SelectedValue.ToString() + "'";
+            string selectQuery = "SELECT Name,Price,Quantity FROM Product WHERE Category ='" + CategoryDropdown.SelectedValue.ToString() + "'";
             SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -228,23 +228,49 @@ namespace Vender
 
         private void ButtonAddOrder_Click(object sender, EventArgs e)
         {
-           if(TextBoxName.Text=="" || TextBoxQuantity.Text=="")
+            int quantity = 0;
+            dBCon.OpenCon();
+
+            string selectQuery = "SELECT Quantity FROM Product WHERE Name='"+TextBoxName.Text+"'";
+            SqlCommand cmd = new SqlCommand(selectQuery, dBCon.GetCon());
+            quantity = (int)cmd.ExecuteScalar();
+
+           
+
+
+            if (TextBoxName.Text=="" || TextBoxQuantity.Text=="")
             {
                 LabelMessage.Text = "Missing Information";
             }
             else
             {
-                int Total = Convert.ToInt32(TextBoxPrice.Text) * Convert.ToInt32(TextBoxQuantity.Text);
-                DataGridViewRow addRow = new DataGridViewRow();
-                addRow.CreateCells(DataGridViewOrder);
-                addRow.Cells[0].Value = n++;
-                addRow.Cells[1].Value = TextBoxName.Text;
-                addRow.Cells[2].Value = TextBoxPrice.Text;
-                addRow.Cells[3].Value = TextBoxQuantity.Text;
-                addRow.Cells[4].Value = Total;
-                DataGridViewOrder.Rows.Add(addRow);
-                grandTotal += Total;
-                labelAmount.Text = grandTotal + " $";
+                if(int.Parse(TextBoxQuantity.Text) > quantity)
+                {
+                    LabelMessage.Text = "Out of stock only " + quantity + " avalaible";
+                }
+                else
+                {
+                    int Qty = int.Parse(TextBoxQuantity.Text);
+
+                    int Total = Convert.ToInt32(TextBoxPrice.Text) * Convert.ToInt32(TextBoxQuantity.Text);
+                    DataGridViewRow addRow = new DataGridViewRow();
+                    addRow.CreateCells(DataGridViewOrder);
+                    addRow.Cells[0].Value = n++;
+                    addRow.Cells[1].Value = TextBoxName.Text;
+                    addRow.Cells[2].Value = TextBoxPrice.Text;
+                    addRow.Cells[3].Value = TextBoxQuantity.Text;
+                    addRow.Cells[4].Value = Total;
+                    DataGridViewOrder.Rows.Add(addRow);
+                    grandTotal += Total;
+                    labelAmount.Text = grandTotal + " $";
+
+                    selectQuery = "UPDATE Product SET Quantity = Quantity-"+TextBoxQuantity.Text+" WHERE Name ='" + TextBoxName.Text + "'";
+                    cmd = new SqlCommand(selectQuery, dBCon.GetCon());
+                    cmd.ExecuteNonQuery();
+                    getTable();
+                }
+
+                
             }
 
         }

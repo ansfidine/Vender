@@ -283,6 +283,16 @@ namespace Vender.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap github_50px {
+            get {
+                object obj = ResourceManager.GetObject("github_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grocery_products_icon_png_3 {
             get {
                 object obj = ResourceManager.GetObject("grocery-products-icon-png-3", resourceCulture);

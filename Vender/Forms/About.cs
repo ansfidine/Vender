@@ -53,7 +53,7 @@ namespace Vender
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
-            GoToSite("https://www.linkedin.com/in/youssouf-ansfidine-b585b014a/");
+            GoToSite("https://github.com/ansfidine");
         }
     }
 }

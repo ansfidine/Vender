@@ -162,6 +162,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.DashlabelProduct = new System.Windows.Forms.Label();
+            this.DashlabelQuantity = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
             this.DataViz1 = new Bunifu.DataViz.WinForms.BunifuDataViz();
@@ -232,10 +233,10 @@
             this.BillsPage = new System.Windows.Forms.TabPage();
             this.bunifuImageButton8 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuShadowPanel7 = new Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel();
+            this.LabelBillTotal = new Bunifu.UI.WinForms.BunifuLabel();
             this.TextBoxSearchBills = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.ButtonSearchBills = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuGradientPanel6 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.LabelBillTotal = new Bunifu.UI.WinForms.BunifuLabel();
             this.DataGridViewBills = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.SettingPage = new System.Windows.Forms.TabPage();
@@ -261,7 +262,6 @@
             this.ButtonPassChange = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label8 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.DashlabelQuantity = new System.Windows.Forms.Label();
             this.bunifuShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indic)).BeginInit();
@@ -1321,6 +1321,18 @@
             this.DashlabelProduct.TabIndex = 1;
             this.DashlabelProduct.Text = "2344";
             // 
+            // DashlabelQuantity
+            // 
+            this.DashlabelQuantity.AutoSize = true;
+            this.DashlabelQuantity.BackColor = System.Drawing.Color.Transparent;
+            this.DashlabelQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashlabelQuantity.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.DashlabelQuantity.Location = new System.Drawing.Point(16, 116);
+            this.DashlabelQuantity.Name = "DashlabelQuantity";
+            this.DashlabelQuantity.Size = new System.Drawing.Size(43, 21);
+            this.DashlabelQuantity.TabIndex = 1;
+            this.DashlabelQuantity.Text = "1234";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -1862,7 +1874,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2777,7 +2789,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -3512,7 +3524,7 @@
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -3836,6 +3848,21 @@
             this.bunifuShadowPanel7.Size = new System.Drawing.Size(920, 621);
             this.bunifuShadowPanel7.TabIndex = 3;
             // 
+            // LabelBillTotal
+            // 
+            this.LabelBillTotal.AutoEllipsis = false;
+            this.LabelBillTotal.CursorType = null;
+            this.LabelBillTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBillTotal.ForeColor = System.Drawing.Color.DimGray;
+            this.LabelBillTotal.Location = new System.Drawing.Point(717, 561);
+            this.LabelBillTotal.Name = "LabelBillTotal";
+            this.LabelBillTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LabelBillTotal.Size = new System.Drawing.Size(61, 34);
+            this.LabelBillTotal.TabIndex = 0;
+            this.LabelBillTotal.Text = "Total";
+            this.LabelBillTotal.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LabelBillTotal.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // TextBoxSearchBills
             // 
             this.TextBoxSearchBills.AcceptsReturn = false;
@@ -3994,21 +4021,6 @@
             this.bunifuGradientPanel6.Size = new System.Drawing.Size(899, 50);
             this.bunifuGradientPanel6.TabIndex = 34;
             // 
-            // LabelBillTotal
-            // 
-            this.LabelBillTotal.AutoEllipsis = false;
-            this.LabelBillTotal.CursorType = null;
-            this.LabelBillTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelBillTotal.ForeColor = System.Drawing.Color.DimGray;
-            this.LabelBillTotal.Location = new System.Drawing.Point(717, 561);
-            this.LabelBillTotal.Name = "LabelBillTotal";
-            this.LabelBillTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LabelBillTotal.Size = new System.Drawing.Size(61, 34);
-            this.LabelBillTotal.TabIndex = 0;
-            this.LabelBillTotal.Text = "Total";
-            this.LabelBillTotal.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.LabelBillTotal.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // DataGridViewBills
             // 
             this.DataGridViewBills.AllowCustomTheming = false;
@@ -4050,7 +4062,7 @@
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -4665,18 +4677,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.bunifuGradientPanel1;
-            // 
-            // DashlabelQuantity
-            // 
-            this.DashlabelQuantity.AutoSize = true;
-            this.DashlabelQuantity.BackColor = System.Drawing.Color.Transparent;
-            this.DashlabelQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashlabelQuantity.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.DashlabelQuantity.Location = new System.Drawing.Point(16, 116);
-            this.DashlabelQuantity.Name = "DashlabelQuantity";
-            this.DashlabelQuantity.Size = new System.Drawing.Size(43, 21);
-            this.DashlabelQuantity.TabIndex = 1;
-            this.DashlabelQuantity.Text = "1234";
             // 
             // AdminForm
             // 

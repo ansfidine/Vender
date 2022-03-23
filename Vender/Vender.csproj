@@ -235,6 +235,7 @@
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
     <Content Include="Logo.ico" />
+    <None Include="Resources\github_50px.png" />
     <Content Include="Resources\Logo.ico" />
     <None Include="Resources\twitter_50px.png" />
     <None Include="Resources\linkedin_50px.png" />
@@ -292,8 +293,6 @@
     <None Include="Resources\email_open_144px.png" />
     <None Include="Resources\loginBack.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
